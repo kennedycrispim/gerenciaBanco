@@ -36,7 +36,8 @@ public class Cliente{
     	return saldo;
     }
     
-    //depositar - Realiza um deposito na conta do cliente com base no valor informado no argumento 'valorDeposito'
+    //depositar - Realiza um deposito na conta do cliente com base no valor
+    //            informado no argumento 'valorDeposito'
     public void depositar(double valorDeposito){
     	saldo = saldo + valorDeposito;
     }
@@ -47,7 +48,10 @@ public class Cliente{
     	if(valorSaque > saldo){
     		System.out.println("Valor excedente!\nVocê possui R$"+ saldo + " disponível!");
     		System.out.println("");
-    	}else {
+    	}else if(valorSaque <= 0){
+    		System.out.println("Digite um valor maior que 0!");
+    		System.out.println("");
+    	}else{
     		saldo = saldo - valorSaque;
     		System.out.println("Saque realizado com sucesso!");
     		System.out.println("valor de saque: R$" + valorSaque);
